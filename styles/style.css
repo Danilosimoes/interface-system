@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+  justify-content: center;
+    align-items: center;
+}
+
+/* make sure to set some focus styles for accessibility */
+:focus {
+    outline: 0;
+}
+
+
+
+ol, ul {
+	list-style: none;
+}
+
+
+body{
+    max-width: 100%;
+    background-color: #D1FAFF;
+    height: 100vh;
+    right: 1000px;
+    align-items: center;
+    justify-content: center;
+  
+}
+header{
+    
+    padding: 30px;
+}
+
+.header-row{
+    display: flex;
+    align-items: center;
+}
+.header-row  img{
+
+    width: 150px;
+    height: 100px;
+
+}
+.row{
+    width: 1280px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 30px;
+    justify-content: space-between;
+    font-size: 25px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+}
+
+/*---------Inserir Carros Funcionarios --------------*/
+nav{
+
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.formulario{
+       
+        height: 60vh;
+        background: #D1FAFF;
+        display: flex;
+        justify-content: center;
+        max-width: 500px;
+        margin-left: 35%;
+        margin-right: 35%;
+        margin-top: 25px;
+        
+    }
+
+
+
+.formulario form {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+    right: 1000px;
+
+}
+
+.formulario .input-box{
+    
+    width: calc(100% / 2 - 0px);
+    right: 1000px;
+}
+
+.formulario .input-box {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+    right: 1000px;
+    
+}
+
+.formulario .input-box input{
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid rgb(255, 255, 255);
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+ 
+}
+
+form div {
+    margin-top: 15px;
+    padding-left: 20px;
+    padding-top: 20px;
+  
+
+    
+}
+
+ul li a {
+    text-decoration: none;
+}
+
+ul li a:active{
+    color: black;
+}
+
+button{
+   border-radius: 5px;
+   font-size: 20px;
+    outline: none;
+    cursor: pointer;
+    color:black;
+    background: #ffffff;
+   
+}
+
+button:hover{
+background:#D1FAFF;
+}
+
+/*-----  Aqui começa o css da tela dos carros -----*/
+.formularioCarros{
+       
+    height: 60vh;
+    background: #D1FAFF;
+    display: flex;
+    justify-content: center;
+    max-width: 500px;
+    margin-left: 35%;
+    margin-right: 35%;
+    margin-top: 25px;
+}
+
+
+
+.formularioCarros form {
+display: flex;
+max-width: 100%;
+right: 1000px;
+}
+
+.formularioCarros .input-box{
+
+width: calc(100% / 2 - 0px);
+right: 1000px;
+}
+
+.formularioCarros .input-box {
+display: block;
+font-weight: 500;
+margin-bottom: 5px;
+right: 1000px;
+}
+
+.formularioCarros .input-box input{
+height: 45px;
+width: 100%;
+outline: none;
+border-radius: 5px;
+border: 1px solid rgb(255, 255, 255);
+padding-left: 15px;
+font-size: 16px;
+border-bottom-width: 2px;
+transition: all 0.3s ease;
+
+}
+
+/*-----  Aqui termina o css da tela dos carros -----*/

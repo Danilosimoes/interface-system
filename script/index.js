@@ -34,8 +34,7 @@ function cadastraFuncionario(){
         "nome": nome,
         "setor": setor
     }
-    
-    
+
     postMethod(url, body)
 
 }
@@ -131,10 +130,8 @@ function postObras() {
 
 
     return xhr.responseText
-
-    
-
 }
+
 
 function finalizarObra(){
     event.preventDefault();
@@ -157,63 +154,6 @@ function finalizarObra(){
  * */
 
 
-const trazCarros = async () =>{
-
-    const response = await fetch('http://143.110.153.236:8080/cars/findAllCars')
-    const carros = await response.json()
-    console.log(carros)
-    const carrosSelect = document.getElementById("select")
-
-    const selectCarros = carros
-
-    selectCarros.forEach((cars) => {
-        value = document.createElement('value');
-        option = new Option(cars.Placa, cars.idCar);
-        console.log(option);
-        carrosSelect.options[carrosSelect.options.length] = option;
-    });
-
-    /*for(cars in selectCarros ) {
-        option = new Option(selectCarros[cars], cars);
-        carrosSelect.options[carrosSelect.options.lenth] = option;
-    
-
-    carrosSelect.options.lenth = 0;*/
 
 
-    /*carros.forEach(element => {
-        let option = criaOption(element);
-        select.appendChild(option);
-
-        
-    });
-*/
-
-}
-
-/*function criaOption(carros) {
-    //value = document.createElement("value")
-    option = document.createElement("option")
-
-    option.innerHTML = carros.Placa
-
-    carros.appendChild(option);
-
-    return option;
-
-
-
-}
-
-function main() {
-
-    
-
-}*/
-
-window.onload = () => {
-    trazCarros()
-    
-    console.log('Iniciado')
-}
 

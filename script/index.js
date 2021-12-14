@@ -71,6 +71,10 @@ function cadastraCarro(){
         console.log(this.responseText)
     }
 
+    
+
+
+
 
     return xhr.responseText
 

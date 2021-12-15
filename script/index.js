@@ -1,21 +1,39 @@
 function postMethod( url, body) {
     console.log("Body = ", body);
-    let request = new XMLHttpRequest()
     
-
-    request.open("POST", url, true)
-    request.setRequestHeader("Content-type", "application/json")
-    
-    request.send(JSON.stringify(body))
+    let xhr = new XMLHttpRequest()
+    xhr.open('post', url, true)
+    xhr.setRequestHeader("Content-type", "application/json;charset=UTF-8")
+    xhr.send(JSON.stringify(body))
     
 
 
-    request.onload = function() {
+    xhr.onload = function() {
         console.log(this.responseText)
     }
 
 
-    return request.responseText
+    return xhr.responseText
+}
+
+function putMethod( url, body) {
+    console.log("Body = ", body);
+    
+    let xhr = new XMLHttpRequest()
+    xhr.open('put', url, true)
+    xhr.setRequestHeader("Content-type", "application/json;charset=UTF-8")
+    xhr.send(JSON.stringify(body))
+    
+
+
+    xhr.onload = function() {
+        console.log(this.responseText)
+    }
+
+    
+
+
+    return xhr.responseText
 }
 
 
@@ -23,9 +41,9 @@ function postMethod( url, body) {
 /*  Cadastro de funcionarios */ 
 
 function cadastraFuncionario(){
+    let url = "http://143.110.153.236:8080/funcionarios/cadastrarFuncionario"
     event.preventDefault();
-    let url = "";
-    let nome = document.getElementById("nomeFunc").value;
+    let nome = document.getElementById("nomefunc").value;
     let setor = document.getElementById("setor").value;
     console.log(nome);
     console.log(setor);
@@ -35,7 +53,8 @@ function cadastraFuncionario(){
         "setor": setor
     }
 
-    postMethod(url, body)
+    postMethod(url,body)
+
 
 }
 
@@ -55,7 +74,7 @@ function cadastraCarro(){
         "cor": cor
     }    
     
-    let url = "http://143.110.153.236:8080/cars/cadastroCarro"
+    let url = "http://143.110.153.236:8080/cars/cadastrar"
     console.log("Body = ", body);
     console.log(url)
     
@@ -70,11 +89,6 @@ function cadastraCarro(){
     xhr.onload = function() {
         console.log(this.responseText)
     }
-
-    
-
-
-
 
     return xhr.responseText
 
@@ -139,14 +153,14 @@ function postObras() {
 
 function finalizarObra(){
     event.preventDefault();
-    let url = "";
+    let url = "http://143.110.153.236:8080/obras/atualizar";
     let idInstalacao = document.getElementById("instalacao").value;
 
     body = {
         "idInstalacao": idInstalacao
     }
 
-    postMethod(url, body);
+    putMethod(url, body);
 }
 
 

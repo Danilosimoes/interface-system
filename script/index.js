@@ -1,8 +1,9 @@
-function postMethod( url, body) {
+// função para realizar os requsts
+function reqFunction( method, url, body) {
     console.log("Body = ", body);
     
     let xhr = new XMLHttpRequest()
-    xhr.open('post', url, true)
+    xhr.open(method, url, true)
     xhr.setRequestHeader("Content-type", "application/json;charset=UTF-8")
     xhr.send(JSON.stringify(body))
     
@@ -16,33 +17,12 @@ function postMethod( url, body) {
     return xhr.responseText
 }
 
-function putMethod( url, body) {
-    console.log("Body = ", body);
-    
-    let xhr = new XMLHttpRequest()
-    xhr.open('put', url, true)
-    xhr.setRequestHeader("Content-type", "application/json;charset=UTF-8")
-    xhr.send(JSON.stringify(body))
-    
-
-
-    xhr.onload = function() {
-        console.log(this.responseText)
-    }
-
-    
-
-
-    return xhr.responseText
-}
-
-
-
-/*  Cadastro de funcionarios */ 
 
 function cadastraFuncionario(){
-    let url = "http://143.110.153.236:8080/funcionarios/cadastrarFuncionario"
+    
     event.preventDefault();
+    let method = 'post';
+    let url = "http://143.110.153.236:8080/funcionarios/cadastrarFuncionario"
     let nome = document.getElementById("nomefunc").value;
     let setor = document.getElementById("setor").value;
     console.log(nome);
@@ -53,7 +33,7 @@ function cadastraFuncionario(){
         "setor": setor
     }
 
-    postMethod(url,body)
+    reqFunction(method, url,body)
 
 
 }
@@ -63,7 +43,8 @@ function cadastraFuncionario(){
  */
 function cadastraCarro(){
     event.preventDefault();
-    /*let url = "localhost:3000/cars/cadastroCarro";*/
+    let method = 'post'
+    let url = "http://143.110.153.236:8080/cars/cadastrar"
     let placa = document.getElementById("placa").value;
     let modelo = document.getElementById("modelo").value;
     let cor = document.getElementById("cor").value;
@@ -74,24 +55,7 @@ function cadastraCarro(){
         "cor": cor
     }    
     
-    let url = "http://143.110.153.236:8080/cars/cadastrar"
-    console.log("Body = ", body);
-    console.log(url)
-    
-    let xhr = new XMLHttpRequest()
-    xhr.open('post', url, true)
-    xhr.setRequestHeader("Content-type", "application/json;charset=UTF-8")
-    xhr.send(JSON.stringify(body))
-    
-    
-
-
-    xhr.onload = function() {
-        console.log(this.responseText)
-    }
-
-    return xhr.responseText
-
+    reqFunction(method, url, body)
 }
 
 /**
@@ -101,7 +65,8 @@ function cadastraCarro(){
 function postObras() {
     
     event.preventDefault();
-    /*let url = "http://localhost:3000/obras/cadastro";*/
+    let method = 'post'
+    let url = "http://143.110.153.236:8080/obras/cadastro";
     let idInstalador = document.getElementById("nome").value;
     let idAjudante = document.getElementById("ajudante").value;
     let idAjudante1 = document.getElementById("ajudante1").value;
@@ -110,10 +75,7 @@ function postObras() {
     let idCarro = document.getElementById("select").value;
     let nPedido = document.getElementById("pedido").value;
     let descricao = document.getElementById("descricao").value;
-    
-    
-
-
+ 
     body = {
         "idFuncionario": idInstalador,
         "Funcionario2": idAjudante,
@@ -128,31 +90,15 @@ function postObras() {
         
         
     }
-    let url = "http://143.110.153.236:8080/obras/cadastro"
-    //let url = "http://localhost:8080/obras/cadastro"
-    console.log("Body = ", body);
-    console.log(url)
-    
-    let xhr = new XMLHttpRequest();
-    xhr.open('post', url, true)
-    xhr.setRequestHeader("Content-type", "application/json;charset=UTF-8")
-    xhr.send(JSON.stringify(body))
-    
-    
+    reqFunction(method, url, body)
     
 
-
-    xhr.onload = function() {
-        console.log(this.responseText)
-    }
-
-
-    return xhr.responseText
 }
 
 
 function finalizarObra(){
     event.preventDefault();
+    let method = 'put'
     let url = "http://143.110.153.236:8080/obras/atualizar";
     let idInstalacao = document.getElementById("instalacao").value;
 
@@ -160,7 +106,7 @@ function finalizarObra(){
         "idInstalacao": idInstalacao
     }
 
-    putMethod(url, body);
+    reqFunction(method, url, body);
 }
 
 

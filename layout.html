@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/style.css ">
     <script src="script/main.js"></script>
+    <script src="script/index.js"></script>
     <link rel="shortcut icon" href="icon/favicon.ico" type="image/x-icon">
     
     <link rel="apple-touch-icon" sizes="57x57" href="icon/apple-icon-57x57.png">
@@ -32,7 +33,7 @@
 </head> 
 <body>
     
-    <div id="container-obras">
+    <div id="container-obras" class="obras-todo">
 
         <template id="obra-template">
             <div class="obra">
@@ -41,7 +42,8 @@
                 <p>Carro: <span></span></p>
                 <p>Pedido: <span></span></p>
                 <p>Saida: <span></span></p>
-                <p>URL: <span></span></p>
+                <p>ID: <span id="idInstalacao"></span></p>
+                <button id="idInstalacao" onclick="finalizarObra()">Finalizar</button>
                 <hr>
 
             </div>

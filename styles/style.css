@@ -191,3 +191,9 @@ transition: all 0.3s ease;
 }
 
 /*-----  Aqui termina o css da tela dos carros -----*/
+.obras-todo {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    
+    
+}

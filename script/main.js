@@ -1,6 +1,6 @@
 const trazObras = async () => {
 
-    const response = await fetch('http://143.110.153.236:8080/obras/findAll')
+    const response = await fetch('http://143.110.153.236:8080/obras/aberto/emAberto')
     const dados = await response.json()
     console.log(dados)
     
@@ -16,10 +16,10 @@ const trazObras = async () => {
         const itens_obras = obraElement.querySelectorAll('span')
 
         itens_obras[0].innerText = element.nome
-        itens_obras[1].innerText = element.modelo
+        itens_obras[1].innerText = element.placa
         itens_obras[2].innerText = element.pedido
         itens_obras[3].innerText = element.saida
-        itens_obras[4].innerText = element.url.url
+        itens_obras[4].innerText = element.instalacao
    
     
         containerObraElement.append(obraElement)

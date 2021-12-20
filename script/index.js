@@ -7,10 +7,18 @@ function reqFunction( method, url, body) {
     xhr.setRequestHeader("Content-type", "application/json;charset=UTF-8")
     xhr.send(JSON.stringify(body))
     
-
-
     xhr.onload = function() {
-        console.log(this.responseText)
+        console.log(xhr.statusText)
+        if(xhr.statusText == 'Not Found'){
+            alert('Não encontrado')
+
+        }
+        if(xhr.statusText == 'Created') {
+            alert(xhr.response)
+        }
+        if(xhr.statusText == 'Accepted'){
+            alert(xhr.response)
+        }
     }
 
 
@@ -34,6 +42,8 @@ function cadastraFuncionario(){
     }
 
     reqFunction(method, url,body)
+
+    
 
 
 }
@@ -85,12 +95,10 @@ function postObras() {
         "nPedido": nPedido,
         "idCar": idCarro,
         "descricao": descricao
-        
-        
-        
-        
+          
     }
     reqFunction(method, url, body)
+    
     
 
 }
@@ -100,7 +108,7 @@ function finalizarObra(){
     event.preventDefault();
     let method = 'put'
     let url = "http://143.110.153.236:8080/obras/atualizar";
-    let idInstalacao = document.getElementById("instalacao").value;
+    let idInstalacao = document.getElementById("idInstalacao").value;
 
     body = {
         "idInstalacao": idInstalacao

@@ -5,7 +5,7 @@ const trazObras = async () => {
     console.log(dados)
     
     
-   dados.forEach(element => {
+    await dados.forEach(element => {
 
         const containerObraElement = document.getElementById('container-obras')
 
